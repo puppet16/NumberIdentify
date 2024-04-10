@@ -1,4 +1,4 @@
-package cn.ltt.luck.numberidentify
+package cn.ltt.luck.numberidentify.mlkit
 
 import android.graphics.Bitmap
 import cn.ltt.luck.numberidentify.widget.LogUtil
@@ -14,19 +14,22 @@ import com.google.mlkit.vision.text.latin.TextRecognizerOptions
  *
  * @author 李桐桐
  * date    2024/4/10
- * desc    描述
+ * desc    经常识别失败，多个数字时识别率不高，且有可能识别为其它符号
+ *
+ * 集成：https://developers.google.com/ml-kit/vision/text-recognition/v2/android?hl=zh-cn
+ * 识别时间：200ms以内，最快几十毫秒
+ * 包体积增加：15MB
  * ============================================================
  **/
-class NumberIdentifyManager {
+class MLkitNumberIdentifyManager {
 
     companion object {
-        private val recognizer by lazy { TextRecognition.getClient(TextRecognizerOptions.DEFAULT_OPTIONS) }
-
+        private val identifyClient by lazy { TextRecognition.getClient(TextRecognizerOptions.DEFAULT_OPTIONS) }
 
         fun identify(bitmap: Bitmap, listener: IdentifyResultListener) {
             LogUtil.d(msg = "identify 开始时间：${TimeUtil.getNowTime()}")
             val inputImage = InputImage.fromBitmap(bitmap, 0)
-            val result = recognizer.process(inputImage)
+            val result = identifyClient.process(inputImage)
                 .addOnSuccessListener { text ->
                     LogUtil.d(msg = "identify 出结果时间-success：${TimeUtil.getNowTime()}")
                     listener.onResult(processTextBlock(text))
@@ -64,14 +67,6 @@ class NumberIdentifyManager {
 
                 result.append("\n")
             }
-//            for (block in text.textBlocks) {
-//                for (line in block.lines) {
-//                    LogUtil.d(msg = "identify 处理结果--line：elements=${line.elements}, angle=${line.angle}, recognizedLanguage=${line.recognizedLanguage}")
-//
-//                    result.append(line.text).append("\n")
-//                }
-//                result.append("\n")
-//            }
             LogUtil.d(msg = "identify 处理结果--结束时间：${TimeUtil.getNowTime()}")
             return result.toString()
         }

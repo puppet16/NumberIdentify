@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <cn.ltt.luck.numberidentify.widget.FingerPaintView
+            android:id="@+id/fpvPaint"
+            android:layout_width="400dp"
+            android:layout_height="400dp"
+            android:layout_gravity="center"
+            android:foreground="@drawable/shape_rect_border" />
+
+        <Space
+            android:layout_width="10dp"
+            android:layout_height="10dp" />
+
+        <ImageView
+            android:id="@+id/ivPreview"
+            android:layout_width="400dp"
+            android:layout_height="400dp"
+            android:foreground="@drawable/shape_rect_border" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnDetect"
+            style="@style/DemoButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_weight="1"
+            android:text="@string/detect" />
+
+        <Button
+            android:id="@+id/btnClear"
+            style="@style/DemoButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_weight="1"
+            android:text="@string/clear" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/prediction" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            style="@style/ResultText"
+            android:text="@string/prediction"/>
+
+        <TextView
+            android:id="@+id/tvPrediction"
+            style="@style/ResultText"
+            android:textSize="24sp"
+            android:textColor="@android:color/black"
+            android:text="@string/empty"
+            tools:text="1"/>
+
+        <TableRow>
+
+            <TextView
+                style="@style/ResultText"
+                android:text="@string/probability"/>
+
+            <TextView
+                style="@style/ResultText"
+                android:text="@string/timecost"/>
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/tvProbability"
+                style="@style/ResultText"
+                android:textColor="@android:color/black"
+                android:text="@string/empty"
+                tools:text="0.9"/>
+
+
+            <TextView
+                android:id="@+id/tvTimecost"
+                style="@style/ResultText"
+                android:textColor="@android:color/black"
+                android:text="@string/empty"
+                tools:text="10ms"/>
+
+        </TableRow>
+
+    </TableLayout>
+</LinearLayout>

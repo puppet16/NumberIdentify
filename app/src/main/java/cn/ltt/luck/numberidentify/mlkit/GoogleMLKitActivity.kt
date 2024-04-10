@@ -1,8 +1,9 @@
-package cn.ltt.luck.numberidentify
+package cn.ltt.luck.numberidentify.mlkit
 
 import android.graphics.Bitmap
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import cn.ltt.luck.numberidentify.R
 import cn.ltt.luck.numberidentify.databinding.ActivityNumIdentifyBinding
 import com.hoc081098.viewbindingdelegate.viewBinding
 
@@ -30,16 +31,18 @@ class GoogleMLKitActivity: AppCompatActivity(R.layout.activity_num_identify) {
     private fun onDetectClicked() {
         val bitmap = binding.fpvPaint.exportToBitmap()
         binding.ivPreview.setImageBitmap(bitmap)
-        NumberIdentifyManager.identify(bitmap, object: NumberIdentifyManager.IdentifyResultListener {
-            override fun onResult(result: String) {
-                renderResult(result)
-            }
+        MLkitNumberIdentifyManager.identify(
+            bitmap,
+            object : MLkitNumberIdentifyManager.IdentifyResultListener {
+                override fun onResult(result: String) {
+                    renderResult(result)
+                }
 
-            override fun onError(e: Exception) {
-                e.printStackTrace()
-            }
+                override fun onError(e: Exception) {
+                    e.printStackTrace()
+                }
 
-        })
+            })
     }
 
     /**

@@ -4,6 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import cn.ltt.luck.numberidentify.databinding.ActivityMainBinding
+import cn.ltt.luck.numberidentify.mlkit.GoogleMLKitActivity
+import cn.ltt.luck.numberidentify.singlemodel.SingleModelNumActivity
 import com.hoc081098.viewbindingdelegate.viewBinding
 
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
@@ -17,6 +19,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         }
 
         binding.btnIRSingle.setOnClickListener {
+            startActivity(Intent(this, SingleModelNumActivity::class.java))
 
         }
 

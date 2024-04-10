@@ -56,10 +56,11 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.3")
 
     implementation("com.github.hoc081098:ViewBindingDelegate:1.4.0")
+    // 只加载了如上jar包，安装包大小：5.4M
 
-    // To recognize Latin script
+    // 使用google 的 MLKit 进行文字识别，安装包大小：19.3M
     implementation("com.google.mlkit:text-recognition:16.0.0")
 
-//    // To recognize Chinese script
-//    implementation("com.google.mlkit:text-recognition-chinese:16.0.0")
+    // 使用tflite 加载模型，安装包大小：9.2M，包含放入asset的模型
+    implementation("org.tensorflow:tensorflow-lite:0.0.0-nightly")
 }

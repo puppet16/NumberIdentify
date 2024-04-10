@@ -5,4 +5,8 @@
     <string name="empty">--</string>
     <string name="detect">识别</string>
     <string name="clear">清空内容</string>
+
+    <string name="probability">Probability</string>
+    <string name="timecost">Timecost</string>
+    <string name="timecost_value">%1$d ms</string>
 </resources>
