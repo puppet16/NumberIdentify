@@ -10,8 +10,7 @@ import android.util.Log
  * desc    日志打印工具
  * ============================================================
  **/
-
-internal object LogUtil {
+ object LogUtil {
 
     private var ENABLE_LOG: Boolean = true
 

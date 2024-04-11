@@ -8,9 +8,9 @@
     tools:context=".MainActivity">
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnClassification"
+        android:id="@+id/btnTesseract"
         style="@style/DemoButton"
-        android:text="图像分类(官例)"
+        android:text="Tesseract"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
