@@ -18,7 +18,7 @@ import com.hoc081098.viewbindingdelegate.viewBinding
 class SingleModelNumActivity: AppCompatActivity(R.layout.activity_single_model) {
 
     private val binding by viewBinding<ActivitySingleModelBinding>()
-//    private val distinguishManager by lazy { DistinguishManager(this) }
+    private val distinguishManager by lazy { DistinguishManager(this) }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding.btnClear.setOnClickListener { onClearClicked() }
@@ -29,9 +29,9 @@ class SingleModelNumActivity: AppCompatActivity(R.layout.activity_single_model) 
      * 点击识别
      */
     private fun onDetectClicked() {
-//        val bitmap = binding.fpvPaint.exportToBitmap(DistinguishManager.IMG_WIDTH, DistinguishManager.IMG_HEIGHT)
-//        val distinguishResult = distinguishManager.classify(bitmap)
-//        renderResult(distinguishResult)
+        val bitmap = binding.fpvPaint.exportToBitmap(DistinguishManager.IMG_WIDTH, DistinguishManager.IMG_HEIGHT)
+        val distinguishResult = distinguishManager.classify(bitmap)
+        renderResult(distinguishResult)
     }
 
     /**
