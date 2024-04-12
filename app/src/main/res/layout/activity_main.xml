@@ -24,4 +24,10 @@
         style="@style/DemoButton"
         android:text="Google MLKit"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnTfOCR"
+        style="@style/DemoButton"
+        android:text="TfOCR"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.appcompat.widget.LinearLayoutCompat>

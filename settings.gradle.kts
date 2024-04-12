@@ -6,6 +6,12 @@ pluginManagement {
         gradlePluginPortal()
         mavenLocal()
         maven { setUrl("https://jitpack.io") }
+
+        // tflite 下载tflite的模型和opencv
+        maven {
+            name= "ossrh-snapshot"
+            setUrl("https://oss.sonatype.org/content/repositories/snapshots")
+        }
     }
 }
 dependencyResolutionManagement {
@@ -21,4 +27,3 @@ dependencyResolutionManagement {
 
 rootProject.name = "NumberIdentify"
 include(":app")
- 

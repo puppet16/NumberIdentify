@@ -7,6 +7,7 @@ import cn.ltt.luck.numberidentify.databinding.ActivityMainBinding
 import cn.ltt.luck.numberidentify.mlkit.GoogleMLKitActivity
 import cn.ltt.luck.numberidentify.singlemodel.SingleModelNumActivity
 import cn.ltt.luck.numberidentify.tesseract.TesseractActivity
+import cn.ltt.luck.numberidentify.tflite.TfLiteOCRActivity
 import com.hoc081098.viewbindingdelegate.viewBinding
 
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
@@ -27,6 +28,10 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
         binding.btnMLKit.setOnClickListener {
             startActivity(Intent(this, GoogleMLKitActivity::class.java))
+        }
+
+        binding.btnTfOCR.setOnClickListener {
+            startActivity(Intent(this, TfLiteOCRActivity::class.java))
         }
     }
 }
