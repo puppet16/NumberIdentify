@@ -31,18 +31,18 @@ class GoogleMLKitActivity: AppCompatActivity(R.layout.activity_num_identify) {
     private fun onDetectClicked() {
         val bitmap = binding.fpvPaint.exportToBitmap()
         binding.ivPreview.setImageBitmap(bitmap)
-//        MLkitNumberIdentifyManager.identify(
-//            bitmap,
-//            object : MLkitNumberIdentifyManager.IdentifyResultListener {
-//                override fun onResult(result: String) {
-//                    renderResult(result)
-//                }
-//
-//                override fun onError(e: Exception) {
-//                    e.printStackTrace()
-//                }
-//
-//            })
+        MLkitNumberIdentifyManager.identify(
+            bitmap,
+            object : MLkitNumberIdentifyManager.IdentifyResultListener {
+                override fun onResult(result: String) {
+                    renderResult(result)
+                }
+
+                override fun onError(e: Exception) {
+                    e.printStackTrace()
+                }
+
+            })
     }
 
     /**

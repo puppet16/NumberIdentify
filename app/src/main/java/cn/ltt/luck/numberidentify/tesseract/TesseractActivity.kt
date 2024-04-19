@@ -36,7 +36,7 @@ class TesseractActivity : AppCompatActivity(R.layout.activity_num_identify) {
         )
         val filePath = File(filesDir, "tesseract").absolutePath
         LogUtil.d(msg= "filePath=$filePath")
-//        TesseractNumberIdentifyManager.init(filePath)
+        TesseractNumberIdentifyManager.init(filePath)
     }
 
     /**
@@ -45,8 +45,8 @@ class TesseractActivity : AppCompatActivity(R.layout.activity_num_identify) {
     private fun onDetectClicked() {
         val bitmap = binding.fpvPaint.exportToBitmap()
         binding.ivPreview.setImageBitmap(bitmap)
-//        val result = TesseractNumberIdentifyManager.identify(bitmap)
-//        renderResult(result)
+        val result = TesseractNumberIdentifyManager.identify(bitmap)
+        renderResult(result)
     }
 
     /**

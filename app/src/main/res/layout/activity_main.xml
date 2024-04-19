@@ -14,26 +14,26 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnIRSingle"
-        style="@style/DemoButton"
-        android:text="手写数字识别(个位数识别)"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnMLKit"
         style="@style/DemoButton"
         android:text="Google MLKit"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnIRSingle"
+        style="@style/DemoButton"
+        android:text="TF 朋友的模型，只能单数字识别"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnTfOCR"
         style="@style/DemoButton"
-        android:text="TfOCR"
+        android:text="Tf官网示例 检测+识别"
         app:layout_constraintTop_toTopOf="parent" />
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnTfOCR2"
         style="@style/DemoButton"
-        android:text="TfOCR2"
+        android:text="Tf 模型库里找的模型"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.appcompat.widget.LinearLayoutCompat>

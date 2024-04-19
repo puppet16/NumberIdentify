@@ -65,16 +65,15 @@ dependencies {
     // 只加载了如上jar包，安装包大小：5.4M
 
     // 使用google 的 MLKit 进行文字识别，安装包大小：19.3M, 多15M
-//    implementation("com.google.mlkit:text-recognition:16.0.0")
+    implementation("com.google.mlkit:text-recognition:16.0.0")
 
     // 使用tflite 加载模型，安装包大小：9.2M，包含放入asset的模型，多4M
-//    implementation("org.tensorflow:tensorflow-lite:0.0.0-nightly")
+    implementation("org.tensorflow:tensorflow-lite:0.0.0-nightly")
 
     // 使用 Tesseract-OCR 方式 ，它在android上的集成,使用Tesseract 4.0版本
-//    implementation("cz.adaptech.tesseract4android:tesseract4android:4.7.0")
+    implementation("cz.adaptech.tesseract4android:tesseract4android:4.7.0")
 
     // 使用tflite加载官方模型, 添加之前包24.8M
-
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.0")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.0")
 
